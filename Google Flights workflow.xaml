@@ -1,32 +1,28 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" VisualBasic.Settings="{x:Null}" sap2010:Annotation.AnnotationText="UPTF00000088eyI8SGVscExpbms+a19fQmFja2luZ0ZpZWxkIjpudWxsLCI8SW5pdGlhbFRvb2x0aXA+a19fQmFja2luZ0ZpZWxkIjpudWxsLCI8VmVyc2lvbj5rX19CYWNraW5nRmllbGQiOjF9" sap:VirtualizedContainerService.HintSize="850.4,4460.8" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:sc="clr-namespace:System.ComponentModel;assembly=System.ComponentModel.TypeConverter" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Google_Flights_workflow" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:sc="clr-namespace:System.ComponentModel;assembly=System.ComponentModel.TypeConverter" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_departure_Airport" Type="InArgument(x:String)" />
+    <x:Property Name="in_arrival_Airport" Type="InArgument(x:String)" />
+    <x:Property Name="in_departure_Date" Type="InArgument(x:String)" />
+    <x:Property Name="in_return_Date" Type="InArgument(x:String)" />
+    <x:Property Name="in_escale_Number" Type="InArgument(x:String)" />
+    <x:Property Name="out_flights_Price" Type="OutArgument(x:String)" />
+    <x:Property Name="out_departure_Company" Type="OutArgument(x:String)" />
+    <x:Property Name="out_return_Company" Type="OutArgument(x:String)" />
+  </x:Members>
+  <sap:VirtualizedContainerService.HintSize>850.4,4338.4</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
       <x:String>System.Activities.Statements</x:String>
-      <x:String>System.Activities.Expressions</x:String>
-      <x:String>System.Activities.Validation</x:String>
-      <x:String>System.Activities.XamlIntegration</x:String>
       <x:String>Microsoft.VisualBasic</x:String>
-      <x:String>Microsoft.VisualBasic.Activities</x:String>
       <x:String>System</x:String>
       <x:String>System.Collections</x:String>
       <x:String>System.Collections.Generic</x:String>
       <x:String>System.Collections.ObjectModel</x:String>
-      <x:String>System.Data</x:String>
-      <x:String>System.Diagnostics</x:String>
       <x:String>System.Drawing</x:String>
-      <x:String>System.IO</x:String>
-      <x:String>System.Linq</x:String>
-      <x:String>System.Net.Mail</x:String>
-      <x:String>System.Xml</x:String>
-      <x:String>System.Xml.Linq</x:String>
       <x:String>UiPath.Core</x:String>
       <x:String>UiPath.Core.Activities</x:String>
-      <x:String>System.Windows.Markup</x:String>
-      <x:String>GlobalVariablesNamespace</x:String>
-      <x:String>GlobalConstantsNamespace</x:String>
-      <x:String>System.Reflection</x:String>
-      <x:String>System.Linq.Expressions</x:String>
       <x:String>System.Runtime.Serialization</x:String>
       <x:String>UiPath.UIAutomationNext.Enums</x:String>
       <x:String>UiPath.UIAutomationCore.Contracts</x:String>
@@ -39,6 +35,17 @@
       <x:String>UiPath.UIAutomationNext.Contracts</x:String>
       <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
       <x:String>UiPath.UIAutomationNext.Activities.Models</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Reflection</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -100,35 +107,18 @@
       <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ServiceModel.Activities</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="512,4396" sap2010:WorkflowViewState.IdRef="Sequence_1">
-    <Sequence.Variables>
-      <Variable x:TypeArguments="x:String" Name="departure_Airport" />
-      <Variable x:TypeArguments="x:String" Name="arrival_Airport" />
-      <Variable x:TypeArguments="x:String" Name="mail_Address" />
-      <Variable x:TypeArguments="x:String" Name="escale_Number" />
-      <Variable x:TypeArguments="x:String" Name="return_Date" />
-      <Variable x:TypeArguments="x:String" Name="departure_Date" />
-      <Variable x:TypeArguments="x:String" Name="flights_Price" />
-      <Variable x:TypeArguments="x:String" Name="return_Company" />
-      <Variable x:TypeArguments="x:String" Name="departure_Company" />
-    </Sequence.Variables>
+  <Sequence sap2010:Annotation.AnnotationText="Use Google Flights to find the best flights for the dates received in the input" DisplayName="Google Flights sequence" sap:VirtualizedContainerService.HintSize="512,4273.6" sap2010:WorkflowViewState.IdRef="Sequence_8">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Input workflow.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="449.6,153.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Input workflow.xaml">
-      <ui:InvokeWorkflowFile.Arguments>
-        <OutArgument x:TypeArguments="x:String" x:Key="out_departure_Airport">[departure_Airport]</OutArgument>
-        <OutArgument x:TypeArguments="x:String" x:Key="out_arrival_Airport">[arrival_Airport]</OutArgument>
-        <OutArgument x:TypeArguments="x:String" x:Key="out_departure_Date">[departure_Date]</OutArgument>
-        <OutArgument x:TypeArguments="x:String" x:Key="out_return_Date">[return_Date]</OutArgument>
-        <OutArgument x:TypeArguments="x:String" x:Key="out_escale_Number">[escale_Number]</OutArgument>
-        <OutArgument x:TypeArguments="x:String" x:Key="out_mail_Address">[mail_Address]</OutArgument>
-      </ui:InvokeWorkflowFile.Arguments>
-    </ui:InvokeWorkflowFile>
     <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: Oradea – Londra | Zboruri Google" sap:VirtualizedContainerService.HintSize="449.6,4153.6" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="DebuggerApi" OpenMode="Always" ScopeGuid="e1a56454-6266-453c-b1ac-a939e704d0d5" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
@@ -141,7 +131,7 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type departure destination" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="353.6,258.4" sap2010:WorkflowViewState.IdRef="NTypeInto_5" ScopeIdentifier="e1a56454-6266-453c-b1ac-a939e704d0d5" Text="[departure_Airport]" Version="V3">
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type departure destination" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="353.6,258.4" sap2010:WorkflowViewState.IdRef="NTypeInto_5" ScopeIdentifier="e1a56454-6266-453c-b1ac-a939e704d0d5" Text="[in_departure_Airport]" Version="V3">
               <uix:NTypeInto.Target>
                 <uix:TargetAnchorable BrowserURL="https://www.google.com/travel/flights/search?tfs=CBwQAhopEgoyMDI0LTA0LTAzag0IAhIJL20vMDFwdDdncgwIAhIIL20vMDRqcGwaKRIKMjAyNC0wNC0yNmoMCAISCC9tLzA0anBscg0IAhIJL20vMDFwdDdnQAFIAXABggELCP___________wGYAQE" CvTextArea="383, 418, 66, 20" CvTextArgument="Oradea" CvType="Text" DesignTimeRectangle="320, 395, 390, 70" DesignTimeScaleFactor="1.25" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;c-wiz&amp;gt;div&amp;gt;div&amp;gt;c-wiz&amp;gt;div&amp;gt;c-wiz&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div' parentid='i21' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' parentid='i21' tag='DIV' class='U3iTod R00Jbd zmMKJ LbIaRd' aaname='' check:innerText='Oradea' /&gt;" Guid="0857c30a-a353-4b6e-8aae-893e5414c16d" InformativeScreenshot="e94cbf213fcfc1bb740b6fc557078971.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Oradea – Londra | Zboruri Google' /&gt;" SearchSteps="FuzzySelector, CV" Version="V3" Visibility="Interactive">
                   <uix:TargetAnchorable.Anchors>
@@ -153,7 +143,7 @@
               </uix:NTypeInto.Target>
             </uix:NTypeInto>
             <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" sap:VirtualizedContainerService.HintSize="353.6,218.4" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_5" Shortcuts="[d(hk)][k(Down)][u(hk)][d(hk)][k(enter)][u(hk)]" Version="V3" />
-            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type arrival destination" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="353.6,258.4" sap2010:WorkflowViewState.IdRef="NTypeInto_6" ScopeIdentifier="e1a56454-6266-453c-b1ac-a939e704d0d5" Text="[arrival_Airport]" Version="V3">
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type arrival destination" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="353.6,258.4" sap2010:WorkflowViewState.IdRef="NTypeInto_6" ScopeIdentifier="e1a56454-6266-453c-b1ac-a939e704d0d5" Text="[in_arrival_Airport]" Version="V3">
               <uix:NTypeInto.Target>
                 <uix:TargetAnchorable BrowserURL="https://www.google.com/travel/flights/search?tfs=CBwQAhopEgoyMDI0LTA0LTAzag0IAhIJL20vMDFwdDdncgwIAhIIL20vMDRqcGwaKRIKMjAyNC0wNC0yNmoMCAISCC9tLzA0anBscg0IAhIJL20vMDFwdDdnQAFIAXABggELCP___________wGYAQE" CvTextArea="794, 418, 65, 20" CvTextArgument="Londra" CvType="Text" DesignTimeRectangle="722, 395, 390, 70" DesignTimeScaleFactor="1.25" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;c-wiz&amp;gt;div&amp;gt;div&amp;gt;c-wiz&amp;gt;div&amp;gt;c-wiz&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div' idx='5' parentid='i21' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' class='U3iTod R00Jbd zmMKJ LbIaRd' parentid='i21' tag='DIV' aaname='' check:innerText='Londra' /&gt;" Guid="87fc669d-55da-4515-8e22-6486be1deadb" InformativeScreenshot="fd957d89c79779f5c1b46ac461f0e392.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Oradea – Londra | Zboruri Google' /&gt;" SearchSteps="FuzzySelector, CV" Version="V3" Visibility="Interactive">
                   <uix:TargetAnchorable.Anchors>
@@ -176,7 +166,7 @@
                 </uix:TargetAnchorable>
               </uix:NClick.Target>
             </uix:NClick>
-            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type departure date" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="353.6,258.4" sap2010:WorkflowViewState.IdRef="NTypeInto_7" ScopeIdentifier="e1a56454-6266-453c-b1ac-a939e704d0d5" Text="[departure_Date]" Version="V3">
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type departure date" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="353.6,258.4" sap2010:WorkflowViewState.IdRef="NTypeInto_7" ScopeIdentifier="e1a56454-6266-453c-b1ac-a939e704d0d5" Text="[in_departure_Date]" Version="V3">
               <uix:NTypeInto.Target>
                 <uix:TargetAnchorable BrowserURL="https://www.google.com/travel/flights/search?tfs=CBwQAhopEgoyMDI0LTA0LTAzag0IAhIJL20vMDFwdDdncgwIAhIIL20vMDRqcGwaKRIKMjAyNC0wNC0yNmoMCAISCC9tLzA0anBscg0IAhIJL20vMDFwdDdnQAFIAXABggELCP___________wGYAQE" CvTextArea="1191, 345, 102, 22" CvTextArgument="mie., 3 apr." CvType="Text" DesignTimeRectangle="1135, 329, 252, 70" DesignTimeScaleFactor="1.25" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;c-wiz&amp;gt;div&amp;gt;div&amp;gt;c-wiz&amp;gt;div&amp;gt;c-wiz&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div' idx='6' isleaf='1' parentid='ow82' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' class='MM7Ezd fa5vu' isleaf='1' parentid='ow82' tag='DIV' aaname='' /&gt;" Guid="d3c691e9-6072-4daa-85e6-469cb9b8a3e3" InformativeScreenshot="7d4e33159eff3654a114d3ba6dd898e8.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Oradea – Londra | Zboruri Google' /&gt;" SearchSteps="FuzzySelector, CV" Version="V3" Visibility="Interactive">
                   <uix:TargetAnchorable.Anchors>
@@ -188,7 +178,7 @@
               </uix:NTypeInto.Target>
             </uix:NTypeInto>
             <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" sap:VirtualizedContainerService.HintSize="353.6,218.4" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_7" Shortcuts="[d(hk)][k(enter)][u(hk)]" Version="V3" />
-            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type return date" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="353.6,258.4" sap2010:WorkflowViewState.IdRef="NTypeInto_8" ScopeIdentifier="e1a56454-6266-453c-b1ac-a939e704d0d5" Text="[return_Date]" Version="V3">
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type return date" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="353.6,258.4" sap2010:WorkflowViewState.IdRef="NTypeInto_8" ScopeIdentifier="e1a56454-6266-453c-b1ac-a939e704d0d5" Text="[in_return_Date]" Version="V3">
               <uix:NTypeInto.Target>
                 <uix:TargetAnchorable BrowserURL="https://www.google.com/travel/flights/search?tfs=CBwQAhopEgoyMDI0LTAzLTA5ag0IAxIJL20vMDFmaGczcgwIAxIIL20vMDE1NnEaKRIKMjAyNC0wMy0xNWoMCAMSCC9tLzAxNTZxcg0IAxIJL20vMDFmaGczQAFIAXABggELCP___________wGYAQE&amp;tfu=EgIIASIDCgEw" CvTextArea="1403, 352, 112, 22" CvTextArgument="vin., 15 mar." CvType="Text" DesignTimeRectangle="1386, 329, 212, 70" DesignTimeScaleFactor="1.25" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;c-wiz&amp;gt;div&amp;gt;div&amp;gt;c-wiz&amp;gt;div&amp;gt;c-wiz&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div' idx='7' isleaf='1' parentid='ow9276' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' class='FMXxAd P0TvEc' isleaf='1' parentid='ow9276' tag='DIV' aaname='' /&gt;" Guid="9c21e640-54d0-4f16-9f2d-c35ab41a75dc" InformativeScreenshot="cfab8e624ed36e4e4a05dd1d38ec1a9a.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Iași – Berlin | Zboruri Google' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V3" Visibility="Interactive">
                   <uix:TargetAnchorable.Anchors>
@@ -226,7 +216,7 @@
             <ui:IfElseIf DisplayName="Else If condition for escales" sap:VirtualizedContainerService.HintSize="353.6,92.8" sap2010:WorkflowViewState.IdRef="IfElseIf_1">
               <ui:IfElseIf.ConditionBlocks>
                 <sc:BindingList x:TypeArguments="ui:IfElseIfBlock" AllowEdit="True" AllowNew="True" AllowRemove="True" RaiseListChangedEvents="True">
-                  <ui:IfElseIfBlock BlockType="If" Condition="[escale_Number = &quot;One escale&quot;]" DisplayName="If else if block" sap2010:WorkflowViewState.IdRef="IfElseIfBlock_1">
+                  <ui:IfElseIfBlock BlockType="If" Condition="[in_escale_Number = &quot;One escale&quot;]" DisplayName="If else if block" sap2010:WorkflowViewState.IdRef="IfElseIfBlock_1">
                     <ui:IfElseIfBlock.Then>
                       <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="416,267.2" sap2010:WorkflowViewState.IdRef="Sequence_5">
                         <sap:WorkflowViewStateService.ViewState>
@@ -248,7 +238,7 @@
                       </Sequence>
                     </ui:IfElseIfBlock.Then>
                   </ui:IfElseIfBlock>
-                  <ui:IfElseIfBlock BlockType="ElseIf" Condition="[escale_Number = &quot;Two escales&quot;]" DisplayName="If else if block" sap2010:WorkflowViewState.IdRef="IfElseIfBlock_2">
+                  <ui:IfElseIfBlock BlockType="ElseIf" Condition="[in_escale_Number = &quot;Two escales&quot;]" DisplayName="If else if block" sap2010:WorkflowViewState.IdRef="IfElseIfBlock_2">
                     <ui:IfElseIfBlock.Then>
                       <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="416,267.2" sap2010:WorkflowViewState.IdRef="Sequence_6">
                         <sap:WorkflowViewStateService.ViewState>
@@ -346,7 +336,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </uix:NClick>
-            <uix:NGetText DisplayName="Get flight price" sap:VirtualizedContainerService.HintSize="353.6,197.6" sap2010:WorkflowViewState.IdRef="NGetText_1" ScopeIdentifier="e1a56454-6266-453c-b1ac-a939e704d0d5" TextString="[flights_Price]" Version="V3">
+            <uix:NGetText DisplayName="Get flight price" sap:VirtualizedContainerService.HintSize="353.6,197.6" sap2010:WorkflowViewState.IdRef="NGetText_1" ScopeIdentifier="e1a56454-6266-453c-b1ac-a939e704d0d5" TextString="[out_flights_Price]" Version="V3">
               <uix:NGetText.Target>
                 <uix:TargetAnchorable BrowserURL="https://www.google.com/travel/flights/booking?tfs=CBwQAhpLEgoyMDI0LTAzLTA5IiAKA0lBUxIKMjAyNC0wMy0wORoDQkVSKgJXNDIENjkwM2oNCAMSCS9tLzAxZmhnM3IMCAMSCC9tLzAxNTZxGm0SCjIwMjQtMDMtMTUiIAoDQkVSEgoyMDI0LTAzLTE1GgNDUEgqAkQ4MgQ4NTQxIiAKA0NQSBIKMjAyNC0wMy0xNhoDSUFTKgJXNDIENDg0MGoMCAMSCC9tLzAxNTZxcg0IAxIJL20vMDFmaGczQAFIAXABggELCP___________wGYAQE&amp;tfu=CnhDalJJZEdKVWQwbE1SR3N0WDBGQlNIVjRVV2RDUnkwdExTMHRMUzB0TFhkbFlucGhOMEZCUVVGQlIxaHlTeTB3UVVVelZubEJFZzFFT0RnMU5ERjhWelEwT0RRd0dnc0k3b0FJRUFJYUExSlBUamdjY096aEFRPT0SAggBIgYKATAKATE" CvTextArea="1413, 306, 184, 35" CvType="AnyWordGroup" DesignTimeRectangle="1416, 300, 183, 50" DesignTimeScaleFactor="1.25" ElementType="Text" FullSelectorArgument="&lt;webctrl aria-label='1312 lei românești' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl aria-label='1312 lei românești' tag='SPAN' type='' class='' /&gt;" Guid="675b97bd-9c1e-4752-b1ec-a872fba0e997" InformativeScreenshot="b86fd51c86c272e9feabb0e93d5ac726.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Dus-întors către Berlin | Zboruri Google' /&gt;" SearchSteps="FuzzySelector, CV" Version="V3" Visibility="Interactive">
                   <uix:TargetAnchorable.Anchors>
@@ -357,11 +347,11 @@
                 </uix:TargetAnchorable>
               </uix:NGetText.Target>
             </uix:NGetText>
-            <uix:NGetText DisplayName="Get departure company" sap:VirtualizedContainerService.HintSize="353.6,197.6" sap2010:WorkflowViewState.IdRef="NGetText_2" ScopeIdentifier="e1a56454-6266-453c-b1ac-a939e704d0d5" TextString="[departure_Company]" Version="V3">
+            <uix:NGetText DisplayName="Get departure company" sap:VirtualizedContainerService.HintSize="353.6,197.6" sap2010:WorkflowViewState.IdRef="NGetText_2" ScopeIdentifier="e1a56454-6266-453c-b1ac-a939e704d0d5" TextString="[out_departure_Company]" Version="V3">
               <uix:NGetText.Target>
                 <uix:TargetAnchorable BrowserURL="https://www.google.com/travel/flights/booking?tfs=CBwQAhpsEgoyMDI0LTA0LTAzIiAKA0NMShIKMjAyNC0wNC0wMxoDTVVDKgJMSDIEMTY2OSIgCgNNVUMSCjIwMjQtMDQtMDMaA01BRCoCTEgyBDE4MDZqDAgDEggvbS8wcDJncXIMCAMSCC9tLzA1Nl95GmwSCjIwMjQtMDQtMTYiIAoDTUFEEgoyMDI0LTA0LTE2GgNNVUMqAkxIMgQxODA3IiAKA01VQxIKMjAyNC0wNC0xNhoDQ0xKKgJMSDIEMTY2OGoMCAMSCC9tLzA1Nl95cgwIAxIIL20vMHAyZ3FAAUgBcAGCAQsI____________AZgBAQ&amp;tfu=CnhDalJJVEZoeFNGODBZMDVEV0UxQlVWRTJOVkZDUnkwdExTMHRMUzB0ZDJaaVpYWXpNVUZCUVVGQlIxaDBjRFEwVDJ0UFpXTkJFZzlNU0RFNE1EZDhURWd4TmpZNEl6RWFDd2prdVFZUUFob0RVazlPT0J4dzhyVUISAggBIgMKATE" CvTextArea="433, 576, 70, 15" CvType="AnyWordGroup" DesignTimeRectangle="434, 576, 71, 18" DesignTimeScaleFactor="1.25" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='Lufthansa' tag='SPAN' /&gt;" FuzzyAccuracy="0.6" FuzzySelectorArgument="&lt;webctrl tag='SPAN' type='' class='' /&gt;" Guid="311930cb-fc53-43a3-9b30-f597620f9392" ImageBase64="" InformativeScreenshot="ac43d9f2973f15dde33abb52dcedeb71.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Dus-întors către Madrid | Zboruri Google' /&gt;" SearchSteps="FuzzySelector, CV" Version="V3" Visibility="Interactive">
                   <uix:TargetAnchorable.Anchors>
-                    <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="2">
                       <uix:Target CvTextArea="315, 481, 203, 23" CvTextArgument="Zboruri selectate" CvType="Text" DesignTimeRectangle="319, 480, 984, 30" ElementType="Text" FullSelectorArgument="&lt;webctrl tag='H2' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='H2' type='' class='ToRxvd ZSxxwc' aaname='Zboruri selectate' check:innerText='Zboruri selectate' /&gt;" SearchSteps="FuzzySelector, CV" />
                       <uix:Target CvElementArea="345, 543, 51, 52" CvType="Icon" DesignTimeRectangle="349, 548, 44, 44" FullSelectorArgument="&lt;webctrl aria-role='presentation' css-selector='body&amp;gt;c-wiz&amp;gt;div&amp;gt;div&amp;gt;c-wiz&amp;gt;div&amp;gt;c-wiz&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl aria-role='presentation' type='' tag='DIV' class='EbY4Pc P2UJoe' aaname='' /&gt;" ImageBase64="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" SearchSteps="FuzzySelector, CV" />
                     </scg:List>
@@ -369,11 +359,11 @@
                 </uix:TargetAnchorable>
               </uix:NGetText.Target>
             </uix:NGetText>
-            <uix:NGetText DisplayName="Get return company" sap:VirtualizedContainerService.HintSize="353.6,182.4" sap2010:WorkflowViewState.IdRef="NGetText_3" ScopeIdentifier="e1a56454-6266-453c-b1ac-a939e704d0d5" TextString="[return_Company]" Version="V3">
+            <uix:NGetText DisplayName="Get return company" sap:VirtualizedContainerService.HintSize="353.6,182.4" sap2010:WorkflowViewState.IdRef="NGetText_3" ScopeIdentifier="e1a56454-6266-453c-b1ac-a939e704d0d5" TextString="[out_return_Company]" Version="V3">
               <uix:NGetText.Target>
                 <uix:TargetAnchorable BrowserURL="https://www.google.com/travel/flights/booking?tfs=CBwQAhpLEgoyMDI0LTAzLTA5IiAKA0lBUxIKMjAyNC0wMy0wORoDQkVSKgJXNDIENjkwM2oNCAMSCS9tLzAxZmhnM3IMCAMSCC9tLzAxNTZxGm0SCjIwMjQtMDMtMTUiIAoDQkVSEgoyMDI0LTAzLTE1GgNDUEgqAkQ4MgQ4NTQxIiAKA0NQSBIKMjAyNC0wMy0xNhoDSUFTKgJXNDIENDg0MGoMCAMSCC9tLzAxNTZxcg0IAxIJL20vMDFmaGczQAFIAXABggELCP___________wGYAQE&amp;tfu=CnhDalJJZEdKVWQwbE1SR3N0WDBGQlNIVjRVV2RDUnkwdExTMHRMUzB0TFhkbFlucGhOMEZCUVVGQlIxaHlTeTB3UVVVelZubEJFZzFFT0RnMU5ERjhWelEwT0RRd0dnc0k3b0FJRUFJYUExSlBUamdjY096aEFRPT0SAggBIgYKATAKATE" CvTextArea="433, 605, 141, 16" CvType="AnyWordGroup" DesignTimeRectangle="434, 669, 71, 18" DesignTimeScaleFactor="1.25" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='Norwegian, Wizz Air' tag='SPAN' /&gt;" FuzzyAccuracy="0.6" FuzzySelectorArgument="&lt;webctrl tag='SPAN' type='' class='' /&gt;" Guid="6939b714-4185-40a0-990d-1b0b26ba54d0" ImageBase64="" InformativeScreenshot="83b5b3fc471296cfc89ae489e69d7610.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Dus-întors către Berlin | Zboruri Google' /&gt;" SearchSteps="FuzzySelector, CV" Version="V3" Visibility="Interactive">
                   <uix:TargetAnchorable.Anchors>
-                    <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="2">
                       <uix:Target CvTextArea="315, 416, 204, 23" CvTextArgument="Zboruri selectate" CvType="Text" DesignTimeRectangle="315, 481, 203, 23" ElementType="Text" FullSelectorArgument="&lt;webctrl tag='H2' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='H2' type='' class='ToRxvd ZSxxwc' aaname='Zboruri selectate' check:innerText='Zboruri selectate' /&gt;" ImageBase64="" SearchSteps="FuzzySelector, CV" />
                       <uix:Target CvElementArea="345, 636, 51, 52" CvType="Icon" DesignTimeRectangle="349, 641, 44, 44" FullSelectorArgument="&lt;webctrl aria-role='presentation' css-selector='body&amp;gt;c-wiz&amp;gt;div&amp;gt;div&amp;gt;c-wiz&amp;gt;div&amp;gt;c-wiz&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div' idx='2' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl aria-role='presentation' type='' class='EbY4Pc P2UJoe' tag='DIV' aaname='' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAgYSURBVGhD7Vn3c1RVFPafMNv7QpBQEkFCDxApQoKUCKGZUAMYKSFAgIBAQgeRphA6BAglSGcEGQQV0VEcGzIICIqKNAVRAv5wPN99ucnb3ZvdzaYwzPjDN5u8d9t37rnnfOe+Z5wuLz3N+J+ARKP6Hurcyk3DujtpYYaNinKtdHy+iU4vNgscyrfQxklWyh1kp1dedFLL593k8ajHqgyqTKBFnIcKJljp2mYD3dtjoJJ9UfTvgeD4e28U3S6KEsT6dXIpxw0XERGA5VLYintmWOiPXYayhT3cZ6DLG410cqGZdk+30Domtvx1K21iyxe/YaFTi8x0ZYNRtJN9SvYb6OxbJhqT4qDnotXzBUOlCdSr66XCKdbyBbDFbxcZaH22lbqwC6n6+APt1k+w0c0dRp8dA5G4Bh5yudX9VKgUgf683RfWGssmPF9gpLFsuaaNKjepBBab0dNBny0z0aP92pg3thtoYqpD2V6FsAi42WUmpNrpQbG29XfY4mvGW8VuqNpXFl6vh/KH2ejXwnLXWjzKxq7qUbbXIywCOQPt4uBhYPh87w4uckdg8VBIbO6m7wtMYp4SPidrs6wh5wlJAJaXVvlihZnDX2irVAX1oz10KM9SNufc4TZlO4mgBLq0dtGDUstfWm8UPqtqVxM4Oscs5n3MZyO9m1PZBqiQABZ7fo12YG/uMFDHluFFmOrC8w099M1qbf6ftxioeZx6fiUBRJRlmTbR+UFxFKV1q1qyiRStmnjod45KWEdRrkWZuZUEktqy6/DC0bEwxxLwvjYxe4h2BnGo+3cJdCUlge1TtUN0Z6eBEl6oXdfxR0PWWMg3WM/hPHPA+wACdep46cY2bdvmcGz2f/8kMKirU+zA/T1RImnq3wUQyBuqbRkObk2HzHDROMZN1zZpRt040erzzodANGfWyyy20PADFl7eMDJhbaEwR9NfcOtGMeXPfQjA3+XhzeIEpn9X3fC4PRRTz0NNOFwCrZu6qVmsW/yNEApj6tunJDrpMa/rn3cN1LVNeVT0ITC6t0OoQ+j6ds3cNGuwjfp1dlE8D3yQs+MS1ifIB+FoFBUgSQ7OttCXq0x0dZNRnLXrW40c5zVcYSkOOX5ts5EurjPSBZYVZ1noQZqDIJ4jsUF6yzF9CKwep23Tt5xAUKhgUGh36B8QQ2fs0PH5ZlF96fuGQrtmnjI9JYH/oXCT2rqpYwu38AAgqY2bkhP4l8N5j/YuYX0Y7X2eF/1WjSkPLj4Ejs/TwufhfC1c1eMCAxXTVs4FONT6yUEE52TyAAfFNghOBpHtCI+p7w9j/MDy5DvO9udWGunT5SYhq2E8ACrgIr9HISQF3ZbJmoHhDXJsHwJfv6MpQTTUPwfglzunWenP3QbhiyA0vq+DTiwwCVfI44QTGxPoWggEU9l1/EtN7OpIrgXSk5zCJTJTnJTJLjypn4OyeNwhyQ4a9JJTSHk5FlwYfc8sLc8HPgTAHA3eHquO/0jl2GrsSMm+Z8UisK0gks1FSP5QG7l07Zs2Bmm09d09ANHuGO843hdOsVABS2fIZ4kNHC4h2/Xzy6wMQ8tnSgJ6H6sIvXjwj980i6iAagrl4KKRNsp91U4LRtjpwCwL3ePd0i9aj2Kup9dxWYnbi/fmmgUZiRNslL4dA2VD2AQ2K1xIhWj27dd424MtVAXU0MfmW2gOa/1RvRzCGL34sOK3J//i3NXxBs63kA2E/p+wseQzHwIn+VCiAaynfx4KiN+wJq5K9AvV4xYX8DvYXdJZFuAOSTVOKMCtMBYCgnzmQwCLQINzHKf1z8NFWw6BX3Fff59/yG42NNkZUeGvB1wN4+G8yGc+BMb10RLZXU7XsRFWX4g6aVxB4XzImwbgJuv6memRZ3dEox85ySH8ZqWWnw8fAokcYWSyyegR/tWGCiCCKxNk0vuc2TEmwu+xeWbqxglK5ePBkJzgEsbFbiLJyec+BHAz9hOXb5jsCNek1XF3iTE7tXAJFXm39BYP4ffUEpPYqbocCFT9/LEhW/N/yBzkJPnchwCA+xg0xB2Nv/auKprweEhau7g8xAUZLIo71aN8KFePt3L4tdG84faAywMc+kvsPliXPjMDAQRwrYGIgcY5A6vmRsGARXSId4uF/8KCDmQeMSYNCDwnsqCBLktgkal/F0AAQJKRu4AQqWpTnYCbQRz2USQvSG7oJaznw8WB0VFJoCcnFGRYdFpZgayoLcxI11waEQ3ayf+9kgC2tyBL64gsiwigalfTiI9zl9XnSF64Q/VvoyQA4MBdKi0vcdBQUKja1RRwkKU6xt1QRbcjFRIAoE0e8sHCIOdWGSP6ABEpULlhXgAJVtUGCEoAwDctOdBpjt1xDWt2J2Ck/bPKi59lmcGFZUgCwMIMOx9qbcDrXGaiqK6qrlEBdbiMOAib+IQVqv4OiwAy8vQ0TSdhcFRjSHjhZtFQgOyYnmYX+UBaHjVJOOOHRUBixMsOulp6wQRR9fkKk9A7kV67I8MOYZX6EbumFH4wzjR2W1V7FSpFAOVifU4s+gIdu3KLJ8WNRvv48MJtG45oS0bjk5LmKnIsCD/cC9XYRz4JbPngJAdXVeayDyAAzgk+hOAD9/apVpEE8Zl1BbvDtilWoUQvrDWVXZ4BkAdnlmqfWXELopovGCIioAckwN6ZVvqNE85fvDC4llycCvJuCa6CC4HeiVVLklUmAGDLoVy7t3OJGwoItAMcx/FhW+IQ/4/bhuxUu5AqyLL6K5NIUS0EniSecgJe+g9s0e8qNXvd3AAAAABJRU5ErkJggg==" SearchSteps="FuzzySelector, CV" />
                     </scg:List>

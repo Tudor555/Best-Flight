@@ -7,7 +7,7 @@
     <x:Property Name="out_escale_Number" Type="OutArgument(x:String)" />
     <x:Property Name="out_mail_Address" Type="OutArgument(x:String)" />
   </x:Members>
-  <sap:VirtualizedContainerService.HintSize>405.6,1880</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>850.4,1880</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -138,7 +138,7 @@
         <OutArgument x:TypeArguments="x:String">[out_escale_Number]</OutArgument>
       </ui:InputDialog.Result>
     </ui:InputDialog>
-    <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Input email address" sap:VirtualizedContainerService.HintSize="353.6,264.8" sap2010:WorkflowViewState.IdRef="InputDialog_6" IsPassword="False" Label="Please insert the mail address" Title="Mail address">
+    <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Input email address" sap:VirtualizedContainerService.HintSize="353.6,264.8" sap2010:WorkflowViewState.IdRef="InputDialog_6" IsPassword="False" Label="Please insert the mail address:" Title="Mail address">
       <ui:InputDialog.Result>
         <OutArgument x:TypeArguments="x:String">[out_mail_Address]</OutArgument>
       </ui:InputDialog.Result>
