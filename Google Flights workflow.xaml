@@ -9,7 +9,7 @@
     <x:Property Name="out_departure_Company" Type="OutArgument(x:String)" />
     <x:Property Name="out_return_Company" Type="OutArgument(x:String)" />
   </x:Members>
-  <sap:VirtualizedContainerService.HintSize>850.4,4338.4</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>501.6,4369.6</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -112,26 +112,26 @@
       <AssemblyReference>System.ServiceModel.Activities</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Use Google Flights to find the best flights for the dates received in the input" DisplayName="Google Flights sequence" sap:VirtualizedContainerService.HintSize="512,4273.6" sap2010:WorkflowViewState.IdRef="Sequence_8">
+  <Sequence sap2010:Annotation.AnnotationText="Use Google Flights to find the best flights for the dates received in the input" DisplayName="Google Flights sequence" sap:VirtualizedContainerService.HintSize="512,4304.8" sap2010:WorkflowViewState.IdRef="Sequence_8">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: Oradea – Londra | Zboruri Google" sap:VirtualizedContainerService.HintSize="449.6,4153.6" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="DebuggerApi" OpenMode="Always" ScopeGuid="e1a56454-6266-453c-b1ac-a939e704d0d5" Version="V2">
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: Oradea – Londra | Zboruri Google" sap:VirtualizedContainerService.HintSize="449.6,4184.8" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="DebuggerApi" OpenMode="Always" ScopeGuid="e1a56454-6266-453c-b1ac-a939e704d0d5" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="416,3913.6" sap2010:WorkflowViewState.IdRef="Sequence_4">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="416,3944.8" sap2010:WorkflowViewState.IdRef="Sequence_4">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type departure destination" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="353.6,258.4" sap2010:WorkflowViewState.IdRef="NTypeInto_5" ScopeIdentifier="e1a56454-6266-453c-b1ac-a939e704d0d5" Text="[in_departure_Airport]" Version="V3">
+            <uix:NTypeInto ActivateBefore="True" sap2010:Annotation.AnnotationText="delay before 3 seconds" ClickBeforeMode="Single" DelayBefore="5" DisplayName="Type departure destination" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="353.6,289.6" sap2010:WorkflowViewState.IdRef="NTypeInto_5" ScopeIdentifier="e1a56454-6266-453c-b1ac-a939e704d0d5" Text="[in_departure_Airport]" Version="V3">
               <uix:NTypeInto.Target>
                 <uix:TargetAnchorable BrowserURL="https://www.google.com/travel/flights/search?tfs=CBwQAhopEgoyMDI0LTA0LTAzag0IAhIJL20vMDFwdDdncgwIAhIIL20vMDRqcGwaKRIKMjAyNC0wNC0yNmoMCAISCC9tLzA0anBscg0IAhIJL20vMDFwdDdnQAFIAXABggELCP___________wGYAQE" CvTextArea="383, 418, 66, 20" CvTextArgument="Oradea" CvType="Text" DesignTimeRectangle="320, 395, 390, 70" DesignTimeScaleFactor="1.25" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;c-wiz&amp;gt;div&amp;gt;div&amp;gt;c-wiz&amp;gt;div&amp;gt;c-wiz&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div' parentid='i21' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' parentid='i21' tag='DIV' class='U3iTod R00Jbd zmMKJ LbIaRd' aaname='' check:innerText='Oradea' /&gt;" Guid="0857c30a-a353-4b6e-8aae-893e5414c16d" InformativeScreenshot="e94cbf213fcfc1bb740b6fc557078971.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Oradea – Londra | Zboruri Google' /&gt;" SearchSteps="FuzzySelector, CV" Version="V3" Visibility="Interactive">
                   <uix:TargetAnchorable.Anchors>
@@ -141,6 +141,11 @@
                   </uix:TargetAnchorable.Anchors>
                 </uix:TargetAnchorable>
               </uix:NTypeInto.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
             </uix:NTypeInto>
             <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" sap:VirtualizedContainerService.HintSize="353.6,218.4" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_5" Shortcuts="[d(hk)][k(Down)][u(hk)][d(hk)][k(enter)][u(hk)]" Version="V3" />
             <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type arrival destination" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="353.6,258.4" sap2010:WorkflowViewState.IdRef="NTypeInto_6" ScopeIdentifier="e1a56454-6266-453c-b1ac-a939e704d0d5" Text="[in_arrival_Airport]" Version="V3">
