@@ -43,6 +43,7 @@
       <x:String>GlobalVariablesNamespace</x:String>
       <x:String>GlobalConstantsNamespace</x:String>
       <x:String>System.Reflection</x:String>
+      <x:String>System.Linq.Expressions</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -123,17 +124,17 @@
         <OutArgument x:TypeArguments="x:String">[out_arrival_Airport]</OutArgument>
       </ui:InputDialog.Result>
     </ui:InputDialog>
-    <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Input departure date" sap:VirtualizedContainerService.HintSize="353.6,281.6" sap2010:WorkflowViewState.IdRef="InputDialog_3" IsPassword="False" Label="Please insert departure date:" Title="Departure date">
+    <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Input departure date" sap:VirtualizedContainerService.HintSize="353.6,281.6" sap2010:WorkflowViewState.IdRef="InputDialog_3" IsPassword="False" Label="Please insert departure date: (maximum 10 months in advanced from today)" Title="Departure date">
       <ui:InputDialog.Result>
         <OutArgument x:TypeArguments="x:String">[out_departure_Date]</OutArgument>
       </ui:InputDialog.Result>
     </ui:InputDialog>
-    <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Input return date" sap:VirtualizedContainerService.HintSize="353.6,281.6" sap2010:WorkflowViewState.IdRef="InputDialog_4" IsPassword="False" Label="Please insert the date of return:" Title="Date of return">
+    <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Input return date" sap:VirtualizedContainerService.HintSize="353.6,281.6" sap2010:WorkflowViewState.IdRef="InputDialog_4" IsPassword="False" Label="Please insert the date of return: (maximum 10 months in advanced from today)" Title="Date of return">
       <ui:InputDialog.Result>
         <OutArgument x:TypeArguments="x:String">[out_return_Date]</OutArgument>
       </ui:InputDialog.Result>
     </ui:InputDialog>
-    <ui:InputDialog OptionsString="{x:Null}" DisplayName="Input number of escales" sap:VirtualizedContainerService.HintSize="353.6,335.2" sap2010:WorkflowViewState.IdRef="InputDialog_5" IsPassword="False" Label="Please choose the number of escales:" Options="[{&quot;One escale&quot;,&quot;Two escales&quot;,&quot;Unlimited escales&quot; }]" Title="Maximum number of escales">
+    <ui:InputDialog OptionsString="{x:Null}" DisplayName="Input number of escales" sap:VirtualizedContainerService.HintSize="353.6,335.2" sap2010:WorkflowViewState.IdRef="InputDialog_5" IsPassword="False" Label="Please choose the number of escales:" Options="[{&quot;1&quot;,&quot;2&quot;,&quot;Unlimited&quot; }]" Title="Maximum number of escales">
       <ui:InputDialog.Result>
         <OutArgument x:TypeArguments="x:String">[out_escale_Number]</OutArgument>
       </ui:InputDialog.Result>

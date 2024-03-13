@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" VisualBasic.Settings="{x:Null}" sap2010:Annotation.AnnotationText="UPTF00000088eyI8SGVscExpbms+a19fQmFja2luZ0ZpZWxkIjpudWxsLCI8SW5pdGlhbFRvb2x0aXA+a19fQmFja2luZ0ZpZWxkIjpudWxsLCI8VmVyc2lvbj5rX19CYWNraW5nRmllbGQiOjF9" sap:VirtualizedContainerService.HintSize="850.4,2521.6" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:uas="clr-namespace:UiPath.Activities.System;assembly=UiPath.System.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" VisualBasic.Settings="{x:Null}" sap2010:Annotation.AnnotationText="UPTF00000088eyI8SGVscExpbms+a19fQmFja2luZ0ZpZWxkIjpudWxsLCI8SW5pdGlhbFRvb2x0aXA+a19fQmFja2luZ0ZpZWxkIjpudWxsLCI8VmVyc2lvbj5rX19CYWNraW5nRmllbGQiOjF9" sap:VirtualizedContainerService.HintSize="850.4,1248" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:uas="clr-namespace:UiPath.Activities.System;assembly=UiPath.System.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -158,39 +158,17 @@
     </ui:InvokeWorkflowFile>
     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Mail construction workflow.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="433.6,153.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Mail construction workflow.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <InArgument x:TypeArguments="x:String" x:Key="in_departure_Airport">
-          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="departure_Airport" />
-        </InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_arrival_Airport">
-          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="arrival_Airport" />
-        </InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_mail_Address">
-          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="mail_Address" />
-        </InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_escale_Number">
-          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="escale_Number" />
-        </InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_return_Date">
-          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="return_Date" />
-        </InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_departure_Date">
-          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="departure_Date" />
-        </InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_flights_Price">
-          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="flights_Price" />
-        </InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_return_Company">
-          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="return_Company" />
-        </InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_departure_Company">
-          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="departure_Company" />
-        </InArgument>
-        <OutArgument x:TypeArguments="x:String" x:Key="out_mail_Subject">
-          <VisualBasicReference x:TypeArguments="x:String" ExpressionText="mail_Subject" />
-        </OutArgument>
-        <InOutArgument x:TypeArguments="x:String" x:Key="io_mail_Message">
-          <VisualBasicReference x:TypeArguments="x:String" ExpressionText="mail_Message" />
-        </InOutArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_departure_Airport">[departure_Airport]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_arrival_Airport">[arrival_Airport]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_mail_Address">[mail_Address]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_escale_Number">[escale_Number]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_return_Date">[return_Date]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_departure_Date">[departure_Date]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_flights_Price">[flights_Price]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_return_Company">[return_Company]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_departure_Company">[departure_Company]</InArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="out_mail_Subject">[mail_Subject]</OutArgument>
+        <InOutArgument x:TypeArguments="x:String" x:Key="io_mail_Message">[mail_Message]</InOutArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
     <Assign sap:VirtualizedContainerService.HintSize="433.6,121.6" sap2010:WorkflowViewState.IdRef="Assign_1">
